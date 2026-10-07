@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products | j4ma MotorShop</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="Backgroundlogo.jpg">
+
+</head>
+
+<body>
+
+    <script>
+
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+}
+
+</script>
+
+    <header>
+
+        <div class="logo">
+            <img src="Backgroundlogo.jpg" alt="j4ma MotorShop Logo">
+            j4ma MotorShop
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="comments.html">Reviews</a>
+        </nav>
+
+        <div class="search-area">
+        <input type="text"  id="searchInput" placeholder="Search motorcycle parts...">
+
+        <button type="button" class="btn-search" onclick="searchProducts()">
+        Search
+        </button>
+        </div>
+    
+
+        <div class="user-auth">
+            <a href="cart.html" class="btn-cart">
+            🛒 Cart (<span id="cart-count">0</span>)
+            </a>
+
+            <a href="login.html" class="btn-login">
+                Login
+
+            <a href="#" class="btn-logout" onclick="logout()">
+                Logout
+            </a>
+        </div>
+
+    </header>
+
+
+    <section id="products">
+
+        <div class="title">
+
+            <h2>Featured Products</h2>
+
+            <p>
+                Quality modified parts for your motorcycle
+            </p>
+
+            <br>
+
+            <p>
+                Malaysian, Thailand, Vietnam, Indonesian Concepts
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+         
+            <div class="product" onclick="window.location.href='product-details.html?product=kenochi'">
+                <img src="kenochi-pipe.jpg" alt="Performance Muffler">
+
+                <div class="product-info">
+
+                    <h3>Kenochi Muffler V1/V2/V3/V4</h3>
+
+                    <p>
+                    KENOCHI PIPE K2 V1 
+
+                    WITH COVER
+
+
+
+                    FOR MOTORCYCLE
+
+                    CLICK 125/150 V1V2V3
+
+                    SPORTY
+
+                    SOULTY
+
+                    NMAX V1V2V3
+
+                    AEROX V1V2V3
+
+                    BEAT V1/V2 
+
+                    M3 / GEAR / MSI125
+
+
+                    AHNJA MC-PARTS
+
+
+                    Read before you place your order.
+
+
+                    We ensure all products are inspected and in perfect condition before packing and shipping.
+
+                    All items that we shipped out are 100% brand new.
+
+
+                    TAKE NOTE !
+
+                    No cancellation once the item is shipped.
+
+                    Strictly no bogus buyers.
+
+                    Once your order is being shipped out we are not able to control the couriers delivery time.
+
+                    All we can do is to follow up your order.
+
+                    The courier takes time and effort to deliver your item carefully.
+
+
+                    Disclaimer: Product color may slightly vary due to photographic lighting sources or your monitor settings.
+
+                    ❤️Thank you for your understanding!❤️
+
+                    </p>
+
+                    <div class="price">
+                        ₱6,000
+                    </div>
+
+                    <div class="product-actions">
+
+                    
+                    <button
+                        type="button" class="add-cart"
+                         onclick="event.stopPropagation(); addToCart('Kenochi Pipe', 6000, 'kenochi-pipe.jpg')">
+                        Add to Cart
+                    </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        
+            <div class="product" onclick="window.location.href='product-details.html?product=mags'">
+
+                <img src="mags.jpg" alt="Alloy Mags">
+
+                <div class="product-info">
+
+                    <h3>CNC STAR MAGS</h3>
+
+                    <p>
+                    Upgrade your scooter’s style and performance with the LEIVENGER MAGS CNC STAR (5-Spokes). Precision CNC-milled from high-grade aluminum alloy for strength, 
+                    lightness, and excellent finish. The aggressive 5-spoke STAR design gives a modern sporty look while keeping rigidity for safe city and highway riding.
+                    Key benefits:
+                    CNC precision for consistent balancing and fitment.
+                    Lightweight construction improves handling and acceleration.
+                    Durable corrosion-resistant finish for long life in all weather.
+                    Designed for bolt-on installation — fits popular Honda/DIY adapters used on Click, Beat, Scoopy, Genio, ZoomerX.
+                    
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+                    </p>
+
+                    <div class="price">
+                        ₱7,000
+                    </div>
+
+                    <div class="product-actions">
+                    
+                    <button type="button" class="add-cart"
+                    onclick="event.stopPropagation(); addToCart('mags', 7000, 'mags.jpg')">
+                        Add to Cart
+                    </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+           
+            <div class="product" onclick="window.location.href='product-details.html?product=decals'">
+
+                <img src="decals.jpg" alt="decals">
+
+                <div class="product-info">
+
+                    <h3> INDONESIAN DECALS CONCEPTS</h3>
+
+                    <p>
+                        Motorcycle Variation Striping Stickers
+
+                    Suitable for your vehicle to make it look more attractive, like new again hhee
+
+
+
+                    Specifications
+
+                    - Non Label Material
+
+                    - Stickers are still sheets
+
+                    - Sticker 1 Set Right Left
+
+                    - Lamination/Anti-Scratch (Glossy) Anti-Fade Waterproof
+
+                    - Printed with High Resolution
+
+                    - Lasts up to 3-5 years
+
+                    Item price includes shipping fee that should be borne by the buyer.
+                    
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+            
+
+
+
+                    </p>
+
+                    <div class="price">
+                        ₱1,800
+                    </div>
+
+                    <div class="product-actions">
+
+                    <button
+                        type="button" class="add-cart"
+                         onclick="event.stopPropagation(); addToCart('decals', 1800, 'decals.jpg')">
+                        Add to Cart
+                    </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+            <div class="product" onclick="window.location.href='product-details.html?product=bomxshock'">
+
+                <img src="bomxshock.jpg" alt="bomxshock">
+
+                <div class="product-info">
+
+                    <h3>Bom X Shock</h3>
+
+                    <p>
+                     MADE IN THAILAND
+
+                     
+
+                     We would like to assure you all items that we deliver is 100% brand new.
+
+                     We always check before we deliver.
+
+                     We welcome all reseller and wholesalers.
+
+                     Don’t rush your orders because we can’t control the shipping.
+
+                     If there are issues, you can message me.
+
+                     No cancellation once we shipped your order.
+
+                      What you see is what you get.
+
+                      Once you receive your product, please give me a great rating. ⭐️ ⭐️ ⭐ ⭐️ ⭐
+
+                     
+
+                     Note：Some photos may slightly differ from actual items in terms of color due to lighting during photo shoot and monitor display.
+
+                     Note: Don't install the item by yourself if you are not a professional mechanic, because we will not cover the damage if you do so..
+                        <br>
+                        <br>
+                    </p>
+
+                    <div class="price">
+                        ₱5,500
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button type="button" class="add-cart"
+                        onclick="event.stopPropagation(); addToCart('bomxshock', 5500,'bomxshock.jpg')">
+                        Add to Cart 🛒
+                        </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+            <div class="product" onclick="window.location.href='product-details.html?product=discbrake'">
+
+                <img src="discbrake.jpg" alt="discbrake">
+
+                <div class="product-info">
+
+                    <h3>260MM BIG DISC with BRACKET</h3>
+
+                    <p>
+                           Suitable for:
+
+                            BEAT/Fi
+
+                            CLICK 125 (including V1/V2/V3) / CLICK 160
+
+                         CNC Floatings Disc Ligthen 260mm With Bracket Click /Beat 4 Holes
+
+                         We would like to assure you all items that we deliver is 100% brand new.
+
+                         We always check before we deliver.
+
+                         We welcome all reseller and wholesalers.
+
+                         Don’t rush your orders because we can’t control the shipping.
+
+                         If there are issues, you can message me.
+
+                         No cancellation once we shipped your order.
+
+                         What you see is what you get.
+
+                         Once you receive your product, please give me a great rating. ⭐️ ⭐️ ⭐ ⭐️ ⭐
+
+                        
+
+                         Note：Some photos may slightly differ from actual items in terms of color due to lighting during photo shoot and monitor display.
+
+                         Note: Don't install the item by yourself if you are not a professional mechanic, because we will not cover the damage if you do so..
+                    </p>
+
+                    <div class="price">
+                        ₱1,500
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button type="button" class="add-cart"
+                        onclick="event.stopPropagation(); addToCart('discbrake', 1500, 'discbrake.jpg')">
+                            Add to Cart 🛒
+                        </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+            <div class="product" onclick="window.location.href='product-details.html?product=ayotorbgtail'">
+
+                <img src="ayotorbgtail.jpg" alt="ayotorbgtail">
+
+                <div class="product-info">
+
+                    <h3>AYOTO RGB LED TAIL LIGHT</h3>
+
+                    <p>
+                    
+                        Easy Installation & Compatibility
+
+                        No complicated wiring needed—this tail light assembly is designed for a plug-and-play setup, making installation a breeze. It fits seamlessly into the stock socket of the Honda Beat FI V2 model, ensuring a perfect match for your motorcycle.
+
+
+
+                        Built for Durability & Safety
+
+                        With a robust IP65 waterproof rating, this tail light is ready to handle rain and moisture, so you can ride confidently in any weather. The high-intensity LED bulbs provide enhanced visibility, making your ride safer whether you're in bright sunlight or heavy fog.
+
+
+
+                        Customizable Lighting Experience
+
+                        Switch between a wide range of lighting effects, including breathing, flowing, and flashing patterns. The adjustable brightness feature lets you fine-tune the look of your tail light to suit your preference.
+
+                        <br>
+                        <br>
+                    </p>
+
+                    <div class="price">
+                        ₱3,500
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button type="button" class="add-cart"
+                       onclick="event.stopPropagation(); addToCart('ayotorbgtail', 7000, 'ayotorbgtail.jpg')">
+                            Add to Cart 🛒
+                        </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+            <div class="product" onclick="window.location.href='product-details.html?product=tirehugger'">
+
+                <img src="tirehugger.jpg" alt="tirehugger">
+
+                <div class="product-info">
+
+                    <h3>Tire Hugger</h3>
+
+                    <p>
+                       It protects the tire and engine from unwanted muds or debirs on the road.
+
+                        High quality ABS plastic material, durable and sturdy, not easily damaged.
+
+                        Smooth surface, easy to clean.
+
+                        Comes in a hydro dip carbon design not stickers that will surely give you a stylish look. 
+
+                        You need screws when installing but not included in package.
+
+                        ✨Package:
+
+
+
+                        1 x Tire hugger mud
+
+
+
+                        ✨Note:
+
+
+
+                        Please allow 0.5-1cm difference due to manual measurement.
+
+                        Due to light and screen difference the item's color may be slightly different from.
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                    </p>
+
+                    <div class="price">
+                        ₱485
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button type="button" class="add-cart"
+                        onclick="event.stopPropagation(); addToCart('tirehugger', 485, 'tirehugger.jpg')">
+                            Add to Cart 🛒
+                        </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+            <div class="product" onclick="window.location.href='product-details.html?product=ayotorgb'">
+
+                <img src="ayotorgb.jpg" alt="LED Headlight">
+
+                <div class="product-info">
+
+                    <h3>AYOTO RGB LED Headlight</h3>
+
+                    <p>
+                        AYOTO is an OEM vehicle lighting manufacturer and solution provider with a singular focus: creating products that customers can trust. 
+
+                    Designed in Japan and manufactured in China, AYOTO products combine competitive advantages in both cost and technology. Each product is engineered to withstand complex driving conditions and must pass rigorous safety and quality tests before reaching the market.
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+                    </p>
+
+                    <div class="price">
+                        ₱1,800
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button type="button" class="add-cart"
+                        onclick="event.stopPropagation(); addToCart('ayotorgb', 7000, 'ayotorgb.jpg')">
+                            Add to Cart 🛒
+                        </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+            <div class="product" onclick="window.location.href='product-details.html?product=cncfoot'">
+
+              <img src="cncfoot.jpg" alt="cncfoot">
+
+                <div class="product-info">
+
+                    <h3>CNC Footrest</h3>
+
+                    <p>
+                        Complete Installation Kit: Includes everything needed for easy setup: bolts, washers, and spring in the package.
+
+
+
+                        Convenient Packaging: Sold as 1 pair (2 pieces), ready to use straight out of the box.
+
+
+
+                        Quick Delivery: Most orders shipped within 24 hours
+
+
+
+                        Satisfaction Guaranteed: We stand behind our product quality
+
+
+
+                        Easy Installation: No special tools required
+
+
+
+                        PACKAGE INCLUDES:
+
+                        1x Pair of Footrests (2 pieces)
+
+                        All necessary mounting hardware (bolts, washers, spring)
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </p>
+
+                    <div class="price">
+                        ₱1,350
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button type="button" class="add-cart"
+                        onclick="event.stopPropagation(); addToCart('cncfoot', 7000, 'cncfoot.jpg')">
+                            Add to Cart 🛒
+                        </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+            <div class="product" onclick="window.location.href='product-details.html?product=brembo'">
+
+                <img src="brembohandbraker.jpg" alt="brembohandbraker">
+
+                <div class="product-info">
+
+                    <h3>Brembo Break Lever</h3>
+
+                    <p>
+                        Upgrade your motorcycle's braking system with this all-in-one Brake Master Box set! Designed for versatility and durability, 
+                        this set is perfect for a wide range of motorcycle models. Enjoy peace of mind with its universal fit and reliable performance, 
+                        making it a smart choice for riders looking to enhance safety and convenience.
+
+                    Available Variations:
+
+
+
+
+
+                        - TAshNg Oval Silver
+
+
+
+                        - TAshNg Black Box
+
+
+
+
+
+
+
+
+
+                        What’s Included:
+
+
+
+                        - Left and right brake master components
+
+
+
+                        - Brake switch
+
+
+
+                        - Mounting bolts
+
+
+
+
+
+
+
+                        Why Choose This Set?
+
+
+
+                        - Universal fit for many popular motorcycle types
+
+
+
+                        - Comes complete with all essential parts for easy installation
+
+
+
+                        - Durable construction for long-lasting use
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        
+                    </p>
+
+                    <div class="price">
+                        ₱3399
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button type="button" class="add-cart"
+                        onclick="event.stopPropagation(); addToCart('Brembo', 7000, 'brembohandbraker.jpg')">
+                            Add to Cart 🛒
+                        </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+            <div class="product" onclick="window.location.href='product-details.html?product=ramair'">
+
+               <img src="ramair.jpg" alt="ramair">
+
+                <div class="product-info">
+
+                    <h3>Performance Ram Air</h3>
+
+                    <p>
+                        RAM AIR NMAX v1/v2 / AEROX v1/v2 / PCX160 / CLICK / MIO / RAIDER / BEAT STAINLESS ORIG THAILAND MADE
+
+                        MADE IN THAILAND
+
+
+
+                        We would like to assure you all items that we deliver is 100% brand new.
+
+                        We always check before we deliver.
+
+                        We welcome all reseller and wholesalers.
+
+                        Don’t rush your orders because we can’t control the shipping.
+
+                        If there are issues, you can message me.
+
+                        No cancellation once we shipped your order.
+
+                         What you see is what you get.
+
+                         Once you receive your product, please give me a great rating. ⭐️ ⭐️ ⭐ ⭐️ ⭐
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+
+                    </p>
+
+                    <div class="price">
+                        ₱1,100
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button type="button" class="add-cart"
+                        onclick="event.stopPropagation(); addToCart('ramair', 7000, 'ramair.jpg')">
+                            Add to Cart 🛒
+                        </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
+            <div class="product" onclick="window.location.href='product-details.html?product=sidemirror'">
+
+                <img src="dynamosidemirror.jpg" alt="CNC Side Mirror">
+
+                <div class="product-info">
+
+                    <h3>CNC Side Mirror</h3>
+
+                    <p>
+                        CNC Silver
+
+                        CNC Black
+
+                        Product Specifications
+
+                        Product Name: ARM Sport F1 Side Mirror
+
+                        Material Options: Cast Alloy / Full CNC Aluminum
+
+                        Lens Type: HD Anti-Glare Mirror Lens
+
+                        Adjustment: 360° / Multi-Angle Adjustable
+
+                        Mount Type: Standard motorcycle mirror mount, non bar-end
+
+                        Mirror Head Size: Approx. 12 cm W × 6 cm H
+
+                        Mirror Thickness: Approx. 3 cm
+
+                        Arm Length: Approx. 12 cm
+
+                        Color Options: Silver / Black
+
+                        Version Options: Cast Alloy Silver, Cast Alloy Black, CNC Silver, CNC Black
+
+                        Fitment: Universal fit for most motorcycles using standard mirror mounts
+
+                        Compatible Brands: Yamaha / Honda / Suzuki and other motorcycles with compatible standard mirror mounting points
+
+                        Installation: Direct replacement style installation
+
+                        Package Includes
+
+                        2 × ARM Sport F1 Side Mirrors, Left and Right
+
+                    <div class="price">
+                        ₱1,600
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button type="button" class="add-cart"
+                        onclick="event.stopPropagation(); addToCart('sidemirror', 7000, 'dynamosidemirror.jpg')">
+                            Add to Cart 🛒
+                        </button>
+
+                        <a href="contact.html"
+                           class="btn btn-secondary">
+                            Inquire
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 j4ma MotorShop. All Rights Reserved.
+        </p>
+
+        <p>
+            Modified Parts • Accessories • Motorcycle Customization
+        </p>
+
+    </footer>
+
+<script>
+
+function searchProducts() {
+
+    let searchText = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+    let products = document.querySelectorAll(".product");
+
+    products.forEach(function(product) {
+
+        let productName = product
+            .innerText
+            .toLowerCase();
+
+        if (productName.includes(searchText)) {
+            product.style.display = "";
+        } else {
+            product.style.display = "none";
+        }
+
+    });
+
+}
+
+
+// Press ENTER to search
+document.getElementById("searchInput").addEventListener("keypress", function(event) {
+
+    if (event.key === "Enter") {
+        searchProducts();
+    }
+
+});
+
+</script>
+
+
+<script>
+
+function addToCart(name, price, image) {
+
+    // Check login
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+
+        alert("Please login first before adding products to your cart.");
+
+        window.location.href = "login.html";
+
+        return;
+    }
+
+    // Get existing cart
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if product already exists
+    let existingProduct = cart.find(product => product.name === name);
+
+    if (existingProduct) {
+
+        existingProduct.quantity++;
+
+    } else {
+
+        cart.push({
+            name: name,
+            price: price,
+            image: image,
+            quantity: 1
+        });
+
+    }
+
+    // Save cart
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCartCount();
+
+    alert(name + " added to cart!");
+}
+
+
+function updateCartCount() {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let totalQuantity = 0;
+
+    cart.forEach(function(product) {
+
+        totalQuantity += product.quantity;
+
+    });
+
+    let cartCount = document.getElementById("cart-count");
+
+    if (cartCount) {
+
+        cartCount.textContent = totalQuantity;
+
+    }
+
+}
+
+
+// Update cart when page loads
+updateCartCount();
+
+</script>
+
+<script>
+
+function openProduct(product) {
+
+    window.location.href = "product-details.html?product=" + product;
+
+}
+
+
+
+
+</script>
+
+
+<script>
+function logout() {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
+
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

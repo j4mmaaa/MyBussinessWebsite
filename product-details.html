@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Preview - j4ma MotorShop</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="Backgroundlogo.jpg">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+    <img src="Backgroundlogo.jpg" alt="j4ma MotorShop Logo">
+        j4ma MotorShop
+    </div>
+    
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <a href="cart.html" class="btn-cart">
+        🛒 Cart (<span id="cart-count">0</span>)
+    </a>
+
+</header>
+
+
+<!-- PRODUCT PREVIEW -->
+
+<section class="product-preview">
+
+    <div class="preview-left">
+
+        <!-- MAIN IMAGE -->
+        <img id="mainImage"
+             src="" alt="Product"
+             class="main-product-image">
+
+        <!-- OTHER PICTURES -->
+        <div id="thumbnails" class="thumbnails"></div>
+
+    </div>
+
+
+    <div class="preview-right">
+
+        <h1 id="productName">
+            Product Name
+        </h1>
+
+        <div class="rating">
+            ⭐⭐⭐⭐
+        </div>
+
+        <h2 id="productPrice">
+            ₱0
+        </h2>
+
+        <p id="productDescription">
+            Product description
+        </p>
+
+
+        <!-- VIDEO -->
+
+        <h3>🎥 Product Video</h3>
+
+         <video id="productVideo"
+               class="product-video"
+               controls
+               muted>
+
+            <source id="videoSource" src="" type="video/mp4">
+
+            Your browser does not support video.
+        </video>
+        
+
+
+        <!-- ADD TO CART -->
+
+        <button id="addCartButton"
+                class="add-cart">
+            🛒 Add to Cart
+        </button>
+
+
+        <a href="products.html"
+           class="back-products">
+            ← Back to Products
+        </a>
+
+    </div>
+
+</section>
+
+
+<script>
+
+
+const products = {
+
+    kenochi: {
+    name: "Kenochi-pipe",
+    price: 2500,
+    description: "Modified motorcycle muffler with a sporty design.",
+
+    images: [
+        "kenochi-pipe5.jpg",
+        "kenochi-pipe.jpg",
+        "kenochi-pipe3.jpg",
+        "kenochi-pipe4.jpg"
+    ],
+
+    video: "kenochi-pipe2.mp4"
+},
+
+mags: {
+    name: "CNC STAR MAGS",
+    price: 7000,
+    description: "CNC motorcycle mags with stylish and durable design.",
+
+    images: [
+        "mags.jpg",
+        "mags5.jpg",
+        "mags3.jpg",
+        "mags4.jpg"
+    ],
+
+    video: "mags2.mp4"
+},
+
+decals: {
+    name: "INDONESIAN DECALS CONCEPTS",
+    price: 1800,
+    description: "Stylish motorcycle decals for customization.",
+    
+    images: [
+            "decals.jpg",
+            "decals3.jpg",
+            "decals4.jpg",
+            "decals5.jpg",
+        
+        ],
+        video: "decals2.mp4"
+    },
+
+    bomxshock: {
+        name: "BomX Shock",
+        price: 5500,
+        description: "Performance rear shock absorber for selected motorcycles.",
+        images: [
+            "bomxshock3.jpg",
+            "bomxshock4.jpg",
+            "bomxshock5.jpg",
+            "bomxshock.jpg",
+        ],
+        video: "bomxshock2.mp4"
+    },
+
+    discbrake: {
+        name: "260MM BIG DISC with BRACKET",
+        price: 1500,
+        description: "Modified brake disc designed for motorcycle performance.",
+        images: [
+            "discbrake3.jpg",
+            "discbrake4.jpg",
+            "discbrake5.jpg",
+            "discbrake.jpg",
+        ],
+        video: "discbrake2.mp4"
+    },
+
+    ayotorbgtail: {
+        name: "AYOTO RGB LED Tail Light",
+        price: 3500,
+        description: "RGB LED tail light with stylish lighting effects.",
+        images: [
+            "ayotorbgtail3.jpg",
+            "ayotorbgtail4.jpg",
+            "ayotorbgtail5.jpg",
+            "ayotorbgtail.jpg",
+        ],
+        video: "ayotorbgtail2.mp4"
+    },
+
+    tirehugger: {
+        name: "Tire Hugger",
+        price: 485,
+        description: "Motorcycle tire hugger with sporty appearance.",
+        images: [
+            "tirehugger3.jpg",
+            "tirehugger4.jpg",
+            "tirehugger5.jpg",
+            "tirehugger.jpg",
+
+        ],
+        video: "tirehugger2.mp4"
+    },
+
+    ayotorgb: {
+        name: "AYOTO RGB LED Headlight",
+        price: 1800,
+        description: "RGB LED motorcycle headlight with modern styling.",
+        images: [
+            "ayotorgb3.jpg",
+            "ayotorgb4.jpg",
+            "ayotorgb5.jpg",
+            "ayotorgb.jpg",
+        ],
+        video: "ayotorgb2.mp4"
+    },
+
+    cncfoot: {
+        name: "CNC Footrest",
+        price: 1350,
+        description: "CNC aluminum motorcycle footrest.",
+        images: [
+            "cncfoot3.jpg",
+            "cncfoot4.jpg",
+            "cncfoot5.jpg",
+            "cncfoot.jpg",
+        ],
+        video: "cncfoot2.mp4"
+    },
+
+    brembo: {
+        name: "Brembo Brake Lever",
+        price: 950,
+        description: "Sport-style motorcycle brake lever.",
+        images: [
+            "brembohandbraker.jpg",
+            "brembohandbraker3.jpg",
+            "brembohandbraker4.jpg",
+            "brembohandbraker5.jpg",
+        ],
+        video: "brembo2.mp4"
+    },
+
+    ramair: {
+        name: "Performance Ram Air",
+        price: 1100,
+        description: "Performance air intake system for motorcycles.",
+        images: [
+            "ramair3.jpg",
+            "ramair4.jpg",
+            "ramair5.jpg",
+            "ramair.jpg",
+        ],
+        video: "ramair2.mp4"
+    },
+
+    sidemirror: {
+        name: "CNC Side Mirror",
+        price: 1600,
+        description: "Stylish CNC motorcycle side mirrors.",
+        images: [
+            "dynamosidemirror3.jpg",
+            "dynamosidemirror4.jpg",
+            "dynamosidemirror5.jpg",
+            "dynamosidemirror.jpg",
+        ],
+        video: "sidemirror2.mp4"
+    }
+
+};
+
+
+
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const productID = urlParams.get("product");
+
+const product = products[productID];
+
+
+
+
+if (product) {
+
+    document.getElementById("productName").textContent =
+        product.name;
+
+    document.getElementById("productPrice").textContent =
+        "₱" + product.price.toLocaleString();
+
+    document.getElementById("productDescription").textContent =
+        product.description;
+
+
+    
+
+    document.getElementById("mainImage").src =
+        product.images[0];
+
+
+    
+
+    const thumbnails =
+        document.getElementById("thumbnails");
+
+    product.images.forEach(function(image) {
+
+        const img = document.createElement("img");
+
+        img.src = image;
+
+        img.className = "thumbnail";
+
+        img.onclick = function() {
+
+            document.getElementById("mainImage").src =
+                image;
+
+        };
+
+        thumbnails.appendChild(img);
+
+    });
+
+
+    
+
+    const video =
+        document.getElementById("productVideo");
+
+    video.querySelector("source").src =
+        product.video;
+
+    video.load();
+
+
+    
+
+    document.getElementById("addCartButton").onclick =
+        function() {
+
+            addToCart(
+                product.name,
+                product.price,
+                product.images[0]
+            );
+
+        };
+
+}
+
+
+
+
+function addToCart(name, price, image) {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+
+    let existing =
+        cart.find(item => item.name === name);
+
+
+    if (existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+
+            name: name,
+            price: price,
+            image: image,
+            quantity: 1
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+
+    updateCartCount();
+
+
+    alert(name + " has been added to your cart!");
+
+}
+
+
+
+
+function updateCartCount() {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+
+    let count = cart.reduce(
+        (total, item) =>
+            total + item.quantity,
+        0
+    );
+
+
+    document.getElementById("cart-count")
+        .textContent = count;
+
+}
+
+
+updateCartCount();
+
+</script>
+
+
+</body>
+</html>

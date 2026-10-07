@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart | j4ma MotorShop</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="Backgroundlogo.jpg">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <img src="Backgroundlogo.jpg" alt="Logo">
+
+        <p>j4ma MotorShop</p>
+
+        
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="comments.html">Reviews</a>
+
+    </nav>
+
+</header>
+
+
+<main class="cart-page">
+
+    <h1>🛒 My Shopping Cart</h1>
+
+    <div id="cartItems"></div>
+
+
+    <div class="cart-summary">
+
+        <h2>Total: ₱<span id="cartTotal">0</span></h2>
+
+        <button
+            class="checkout-button"
+            onclick="goToCheckout()">
+            CHECKOUT
+        </button>
+
+        <button
+            class="clear-button"
+            onclick="clearCart()">
+            CLEAR CART
+        </button>
+
+    </div>
+
+</main>
+
+
+<script>
+
+function displayCart() {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+    let cartItems =
+        document.getElementById("cartItems");
+
+    let total = 0;
+
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML = `
+            <div class="empty-cart">
+                <h2>Your cart is empty.</h2>
+                <p>Add some motorcycle parts first.</p>
+
+                <a href="products.html">
+                    Browse Products
+                </a>
+            </div>
+        `;
+
+        document.getElementById("cartTotal").textContent = "0";
+
+        return;
+    }
+
+
+    cartItems.innerHTML = "";
+
+
+    cart.forEach(function(product, index) {
+
+        let subtotal =
+            product.price * product.quantity;
+
+        total += subtotal;
+
+
+        cartItems.innerHTML += `
+
+            <div class="cart-item">
+
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
+
+                <div class="cart-item-info">
+
+                    <h3>${product.name}</h3>
+
+                    <p>
+                        Price: ₱${product.price.toLocaleString()}
+                    </p>
+
+                    <div class="quantity">
+
+                        <button
+                            onclick="changeQuantity(${index}, -1)">
+                            −
+                        </button>
+
+                        <span>
+                            ${product.quantity}
+                        </span>
+
+                        <button
+                            onclick="changeQuantity(${index}, 1)">
+                            +
+                        </button>
+
+                    </div>
+
+                    <strong>
+                        Subtotal:
+                        ₱${subtotal.toLocaleString()}
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="remove-button"
+                    onclick="removeProduct(${index})">
+
+                    Remove
+
+                </button>
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById("cartTotal").textContent =
+        total.toLocaleString();
+
+}
+
+
+function changeQuantity(index, amount) {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart[index].quantity += amount;
+
+
+    if (cart[index].quantity <= 0) {
+
+        cart.splice(index, 1);
+
+    }
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    displayCart();
+
+}
+
+
+function removeProduct(index) {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.splice(index, 1);
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    displayCart();
+
+}
+
+
+function clearCart() {
+
+    if (confirm("Are you sure you want to clear your cart?")) {
+
+        localStorage.removeItem("cart");
+
+        displayCart();
+
+    }
+
+}
+
+
+function goToCheckout() {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+
+        alert("Your cart is empty!");
+
+        return;
+    }
+
+    window.location.href = "checkout.html";
+
+}
+
+
+displayCart();
+
+</script>
+
+</body>
+</html>

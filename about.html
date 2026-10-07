@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | j4ma MotorShop</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="Backgroundlogo.jpg">
+
+</head>
+
+<body>
+
+<script>
+
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+}
+
+</script>
+
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            <img src="Backgroundlogo.jpg" alt="j4ma MotorShop Logo">
+            j4ma MotorShop
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="comments.html">Reviews</a>
+        </nav>
+
+        <div class="search-area">
+            <input type="text" placeholder="Search parts...">
+            <button type="button" class="btn-search">Search</button>
+        </div>
+
+        <div class="user-auth">
+            <a href="cart.html" class="btn-cart">
+            🛒 Cart (<span id="cart-count">0</span>)
+            </a>
+
+            <a href="login.html" class="btn-login">
+                Login
+            <a href="#" class="btn-logout" onclick="logout()">
+                Logout
+            </a>
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="title">
+            <h2>About Us</h2>
+        </div>
+
+        <div class="about">
+
+            <p>
+                Welcome to j4ma MotorShop, your online motorcycle shop for stylish and quality motorcycle parts and accessories.
+
+                We offer motorcycle products inspired by Asian street bike concepts, including styles from Malaysia, Thailand, Indonesia, and Vietnam. Our products are made for riders who want to make their motorcycles look unique, clean, and stylish.
+
+                We provide different parts and accessories for scooters and motorcycles, such as mags, rim sets, spokes, mufflers, and other modified parts. We aim to give riders more choices for customizing their motorcycles.
+        
+                Our goal is to provide good products, affordable prices, and friendly service. Whether you like a simple style or an aggressive street bike look, j4ma MotorShop is here to help you build the motorcycle style you want.
+
+                Ride with style. Ride with confidence. Choose j4ma MotorShop.
+            </p>
+
+            <br>
+
+            <p>
+
+                ยินดีต้อนรับสู่ **j4ma MotorShop** ร้านค้าออนไลน์สำหรับอะไหล่และอุปกรณ์ตกแต่งรถจักรยานยนต์ที่มีสไตล์และคุณภาพ
+
+                เรานำเสนอสินค้าและอะไหล่ที่ได้รับแรงบันดาลใจจาก **สไตล์รถมอเตอร์ไซค์สตรีทของเอเชีย** เช่น มาเลเซีย ไทย อินโดนีเซีย และเวียดนาม เหมาะสำหรับผู้ขับขี่ที่ต้องการให้รถของตนเองมีความโดดเด่น สวยงาม และมีสไตล์
+
+                เรามีอะไหล่และอุปกรณ์ตกแต่งหลากหลาย เช่น **ล้อแม็ก ชุดล้อ ซี่ล้อ ท่อไอเสีย และอะไหล่แต่งอื่น ๆ** เพื่อให้ผู้ขับขี่มีทางเลือกในการปรับแต่งรถของตนเอง
+
+                เป้าหมายของเราคือการนำเสนอ **สินค้าคุณภาพดี ราคาคุ้มค่า และบริการที่เป็นมิตร** ไม่ว่าคุณจะชอบสไตล์เรียบง่ายหรือสไตล์สตรีทที่โดดเด่น j4ma MotorShop พร้อมช่วยให้คุณสร้างสไตล์รถที่เป็นของคุณเอง
+
+                **ขับขี่อย่างมีสไตล์ ขับขี่อย่างมั่นใจ เลือก j4ma MotorShop**
+            </p>
+
+            <br>
+
+            <p>
+
+
+                Selamat datang ke **j4ma MotorShop**, kedai motosikal dalam talian yang menyediakan alat ganti dan aksesori motosikal yang bergaya dan berkualiti.
+
+                Kami menawarkan produk yang diinspirasikan oleh **gaya motosikal jalanan Asia**, termasuk konsep dari Malaysia, Thailand, Indonesia dan Vietnam. Produk kami sesuai untuk penunggang yang ingin menjadikan motosikal mereka lebih unik, kemas dan bergaya.
+
+                Kami menyediakan pelbagai alat ganti dan aksesori seperti **sport rim, set rim, jejari roda, ekzos dan alat ganti ubah suai yang lain**. Kami ingin memberikan lebih banyak pilihan kepada penunggang untuk mengubah suai motosikal mereka.
+
+                Matlamat kami adalah untuk menyediakan **produk yang baik, harga berpatutan dan perkhidmatan yang mesra**. Sama ada anda suka gaya ringkas atau gaya motosikal jalanan yang lebih agresif, j4ma MotorShop sedia membantu anda membina gaya motosikal yang anda inginkan.
+
+                **Tunggang dengan gaya. Tunggang dengan yakin. Pilih j4ma MotorShop.**
+
+
+            </p>
+            
+            
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 j4ma MotorShop. All Rights Reserved.
+        </p>
+
+        <p>
+            Modified Parts • Accessories • Motorcycle Customization
+        </p>
+
+    </footer>
+
+<script>
+function logout() {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
+
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

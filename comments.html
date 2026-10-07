@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reviews | j4ma MotorShop</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="Backgroundlogo.jpg">
+
+</head>
+
+<body>
+
+<script>
+
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+}
+
+</script>
+
+
+  
+    <header>
+
+        <div class="logo">
+            <img src="Backgroundlogo.jpg" alt="j4ma MotorShop Logo">
+            j4ma MotorShop
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="comments.html">Reviews</a>
+        </nav>
+
+        <div class="search-area">
+            <input type="text" placeholder="Search parts...">
+            <button type="button" class="btn-search">Search</button>
+        </div>
+
+        <div class="user-auth">
+            <a href="cart.html" class="btn-cart">
+            🛒 Cart (<span id="cart-count">0</span>)
+            </a>
+
+            <a href="login.html" class="btn-login">
+                Login
+            <a href="#" class="btn-logout" onclick="logout()">
+                Logout
+            </a>
+        </div>
+
+    </header>
+
+
+    <!-- COMMENTS -->
+    <section id="comments">
+
+        <div class="title">
+
+            <h2>Customer Reviews & Comments</h2>
+
+            <p>
+                See what riders say about our parts
+            </p>
+
+        </div>
+
+
+        <div class="comments-container">
+
+
+            <div class="comment">
+
+                <h4>Mark V.</h4>
+
+                <p>
+                    The BomXShock made a huge difference
+                    in my Honda Click's ride quality!
+                    Highly recommended shop.
+                </p>
+
+            </div>
+            <br>
+
+            <div class="comment">
+
+                <h4>Jo4JM123</h4>
+
+                <p>
+                    Angas ng BomXShock legit seller
+                    5 star ka saken!
+                </p>
+
+            </div>
+
+            <br>
+
+             <div class="comment">
+
+                <h4>aborquezkier24</h4>
+
+                <p>
+                    Sana tumagal. Solid neto angas. Bakit pa ako bibili ng brief kung wala din naman sisilip?
+                </p>
+
+            </div>
+
+            <br>
+
+            <div class="comment">
+
+                <h4>lolakopatayna23</h4>
+
+                <p>
+                    wala akong picture pero goods pag ka dating, na install kona sa tb tas airbox perfect na perfect. 
+                    Kung may plano kayo mag convert ram air to airbox pang click, click din piliin nyo👌🏼
+                </p>
+
+            </div>
+
+            <br>
+
+            <div class="comment">
+
+                <h4>siegfried24</h4>
+
+                <p>
+                    Olgoods
+                    Highly recommended. Nag sesend din ng pic si seller bago ideliver. Keep up the good work boss kudos sayo 💯
+                </p>
+
+            </div>
+            
+            <br>
+
+            <div class="comment">
+
+                <h4>UNYodgreat</h4>
+
+                <p>
+                    Quality: the Quality is very affordable and fits in my bike
+                    Suitability: it fits perfectly on nmax v2
+                    Appearance: the look is great and good on my boke ahahahha
+                </p>
+
+            </div>
+
+            <br>
+
+            <div class="comment">
+
+                <h4>foreverYOUNG</h4>
+
+                <p>
+                    maganda yung quality ng product 5 star ka saken. what you see is what you get talaga
+                </p>
+
+            </div>
+
+            <br>
+            <br>
+
+
+            <!-- COMMENT FORM -->
+
+            <form class="comment-form">
+
+                <h3>Leave a Comment</h3>
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <textarea
+                    placeholder="Write your review or comment..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn">
+                    Submit Comment
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 j4ma MotorShop. All Rights Reserved.
+        </p>
+
+        <p>
+            Modified Parts • Accessories • Motorcycle Customization
+        </p>
+
+    </footer>
+
+<script>
+function logout() {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
+
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
+

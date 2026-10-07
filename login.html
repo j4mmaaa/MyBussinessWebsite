@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | j4ma MotorShop</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="Backgroundlogo.jpg">
+</head>
+
+<body class="login-page">
+
+    <div class="login-container">
+
+        <!-- LOGO -->
+        <div class="login-logo">
+            <img src="Backgroundlogo.jpg" alt="j4ma MotorShop Logo">
+        </div>
+
+        <h1>j4ma MotorShop</h1>
+
+        <p class="login-subtitle">
+            Login to continue shopping
+        </p>
+
+        <!-- LOGIN FORM -->
+        <form id="loginForm">
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Email or Username"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit" class="login-button">
+                LOGIN
+            </button>
+
+        </form>
+
+        <p id="loginMessage" class="login-message"></p>
+
+        <!-- CREATE ACCOUNT -->
+        <div class="create-account">
+            <p>Don't have an account?</p>
+
+            <button type="button" id="showRegister">
+                CREATE ACCOUNT
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- CREATE ACCOUNT MODAL -->
+    <div class="register-overlay" id="registerOverlay">
+
+        <div class="register-box">
+
+            <button class="close-register" id="closeRegister">
+                &times;
+            </button>
+
+            <div class="register-logo">
+                <img src="Backgroundlogo.jpg" alt="Logo">
+            </div>
+
+            <h2>Create Account</h2>
+
+            <p class="register-subtitle">
+                Join j4ma MotorShop today
+            </p>
+
+            <form id="registerForm">
+
+                <input type="text" id="newUsername"placeholder="Username" required
+                >
+
+                <input type="email" id="newEmail" placeholder="Email Address" required
+                >
+
+                <input type="password" id="newPassword" placeholder="Create Password" required
+                >
+
+                <input
+                    type="password"
+                    id="confirmPassword" placeholder="Confirm Password"
+                    required
+                >
+
+                <button type="submit" class="register-button">
+                    CREATE ACCOUNT
+                </button>
+
+            </form>
+
+            <p id="registerMessage" class="register-message"></p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+    
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const username =
+                document.getElementById("username").value.trim();
+
+            const password =
+                document.getElementById("password").value.trim();
+
+            const message =
+                document.getElementById("loginMessage");
+
+
+            // Get saved account
+            const savedAccount =
+                JSON.parse(localStorage.getItem("j4maAccount"));
+
+
+            if (savedAccount) {
+
+                // Check account
+                if (
+                    (username === savedAccount.username ||
+                     username === savedAccount.email) &&
+                    password === savedAccount.password
+                ) {
+
+                    localStorage.setItem("isLoggedIn", "true");
+                    localStorage.setItem("username", savedAccount.username);
+
+                    message.textContent = "Login successful!";
+                    message.className = "login-message success";
+
+                    setTimeout(function() {
+                        window.location.href = "index.html";
+                    }, 700);
+
+                } else {
+
+                    message.textContent =
+                        "Incorrect username/email or password.";
+
+                    message.className = "login-message error";
+                }
+
+            } else {
+
+                message.textContent =
+                    "No account found. Please create an account first.";
+
+                message.className = "login-message error";
+            }
+
+        });
+
+
+       
+
+        document.getElementById("showRegister").addEventListener("click", function() {
+
+            document.getElementById("registerOverlay").classList.add("active");
+
+        });
+
+
+        
+
+        document.getElementById("closeRegister").addEventListener("click", function() {
+
+            document.getElementById("registerOverlay").classList.remove("active");
+
+        });
+
+
+        /* Close when clicking outside the box */
+
+        document.getElementById("registerOverlay").addEventListener("click", function(event) {
+
+            if (event.target === this) {
+
+                this.classList.remove("active");
+
+            }
+
+        });
+
+
+        
+
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const username =
+                document.getElementById("newUsername").value.trim();
+
+            const email =
+                document.getElementById("newEmail").value.trim();
+
+            const password =
+                document.getElementById("newPassword").value;
+
+            const confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+            const message =
+                document.getElementById("registerMessage");
+
+
+
+            if (password !== confirmPassword) {
+
+                message.textContent =
+                    "Passwords do not match.";
+
+                message.className =
+                    "register-message error";
+
+                return;
+            }
+
+
+            
+
+            if (password.length < 6) {
+
+                message.textContent =
+                    "Password must be at least 6 characters.";
+
+                message.className =
+                    "register-message error";
+
+                return;
+            }
+
+
+        
+
+            const account = {
+
+                username: username,
+
+                email: email,
+
+                password: password
+
+            };
+
+
+            localStorage.setItem(
+                "j4maAccount",
+                JSON.stringify(account)
+            );
+
+
+            message.textContent =
+                "Account created successfully!";
+
+            message.className =
+                "register-message success";
+
+
+            
+
+            document.getElementById("registerForm").reset();
+
+
+            
+
+            setTimeout(function() {
+
+                document
+                    .getElementById("registerOverlay")
+                    .classList.remove("active");
+
+                document
+                    .getElementById("username")
+                    .value = username;
+
+                document
+                    .getElementById("password")
+                    .value = "";
+
+                message.textContent = "";
+
+            }, 1000);
+
+        });
+
+    </script>
+
+</body>
+</html>

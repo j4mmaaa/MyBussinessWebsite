@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>j4ma MotorShop | Modified Motorcycle Parts</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="Backgroundlogo.jpg">
+
+</head>
+
+<body>
+
+<script>
+
+if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+}
+
+</script>
+
+
+    <header>
+
+        <div class="logo">
+            <img src="Backgroundlogo.jpg" alt="j4ma MotorShop Logo">
+            <p>j4ma MotorShop</p>
+           
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="comments.html">Reviews</a>
+        </nav>
+
+        <div class="search-area">
+            <input type="text" placeholder="Search parts...">
+            <button type="button" class="btn-search">Search</button>
+        </div>
+
+        <div class="user-auth">
+            <a href="cart.html" class="btn-cart">
+            🛒 Cart (<span id="cart-count">0</span>)
+            </a>
+
+            <a href="login.html" class="btn-login">
+                Login
+
+            <a href="#" class="btn-logout" onclick="logout()">
+                Logout
+
+            </a>
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div>
+
+            <h1>j4ma MotorShops</h1>
+
+            <p>
+                Modified Motorcycle Parts & Accessories
+            </p>
+
+            <p>
+                Mufflers • Mags • Spokes • Rimsets • Accessories
+            </p>
+
+            <br>
+
+            <a href="products.html" class="btn">
+                SHOP NOW
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK INTRO -->
+    <section>
+        <img src="SAMPLE 1.jpg" alt="SAMPLE">
+        <img src="SAMPLE 2.jpg" alt="SAMPLE2">
+        <img src="SAMPLE 3.jpg" alt="SAMPLE3">
+        <img src="SAMPLE 4.jpg" alt="SAMPLE4">
+        <img src="SAMPLE5.jpg" alt="SAMPLE5">
+        <img src="SAMPLE6.jpg" alt="SAMPLE6">
+        <img src="SAMPLE7.jpg" alt="SAMPLE7">
+        <img src="SAMPLE8.jpg" alt="SAMPLE8">
+        
+
+
+        <div class="title">
+
+            <h2>Welcome to j4ma MotorShop</h2>
+            <br>
+            <p><h3><ul>
+                Southeast Asia’s modified street bike culture is one of the most vibrant subcultures in the motorcycle world, where everyday 
+                commuters, underbones, and automatic scooters are transformed into high-performance street machines. While they all share a 
+                baseline passion for customization, each country features distinct modification frameworks, styling rules, and tuning 
+                ideologies
+            </p></h3></ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 j4ma MotorShop. All Rights Reserved.
+        </p>
+
+        <p>
+            Modified Parts • Accessories • Motorcycle Customization
+        </p>
+
+    </footer>
+
+<script>
+function logout() {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
+
+    window.location.href = "login.html";
+}
+</script>
+
+
+</body>
+</html>
